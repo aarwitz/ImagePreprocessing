@@ -1,5 +1,5 @@
 # ImagePreprocessing
-Collecting image preprocessing steps for segmentation. Includes brightness, blur, binarizing, etc.
+Collecting image processing steps for segmentation. Includes brightness, blur, binarizing, kmeans clustering of colors, and finally a script for experimenting with segmentation
 
 <br>
 </br>
