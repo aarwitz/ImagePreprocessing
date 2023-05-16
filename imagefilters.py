@@ -8,7 +8,7 @@ import segment
 import numpy as np
 from skimage.filters import threshold_otsu
 
-def toBW(path):
+def toBinary(path):
     """
     converts every image to black and white
     """
@@ -104,13 +104,9 @@ if __name__ == "__main__":
     """"
     Define path and choose visual filter function to run
     """
-    #### Bombay had very good results for toBW
-    #img_path = r"/home/g5_team3/_aaron/tests/Dataset/Bombay/images/"
-    #### 
-    img_path = r"~/images/"
-    output_path = r"/images/filtered_images"
-   # output_path2 = r"/home/g5_team3/_aaron/tests/Visual_Filter_Dataset2/"
-   # output_path3 = r"/home/g5_team3/_aaron/tests/Visual_Filter_Dataset3/"
+    img_path = r"/home/aaron/ImagePreprocessing/Data/raw_images/"
+    output_path = r"/home/aaron/ImagePreprocessing/Data/output/"
+
     # clear folder
     if os.path.exists(output_path):
         shutil.rmtree(output_path)
@@ -119,12 +115,12 @@ if __name__ == "__main__":
     # For each file in dataset, apply filter
     for filename in os.listdir(img_path):
         """ 
-        toBW()
+        toBinary()
         toMono()
         toSegmented()
         ...
         """
-        img = toBrightnessContrast(img_path + filename,5,15)
+        img = toBinary(img_path + filename)
         cv2.imwrite(output_path + filename, img)
         #img2 = toBrightnessContrast(output_path + filename,5,15)
         #cv2.imwrite(output_path2 + filename, img2)
